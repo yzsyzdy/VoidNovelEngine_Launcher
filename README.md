@@ -1,0 +1,2 @@
+# VoidNovelEngine_Luncher
+一个为VoidNovelEngine引擎编写的第三方启动器
