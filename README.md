@@ -27,6 +27,7 @@
     </p>
     </br>
 </div>
-项目说明:
-本项目是为VoidNovelEngine引擎开发的第三方启动器，与VoidNovelEngine项目无直接关系。
+
+## 项目说明:<br>
+本项目是为VoidNovelEngine引擎开发的第三方启动器，与VoidNovelEngine项目无直接关系。<br>
 访问VoidNovelEngine项目:https://github.com/VoidmatrixHeathcliff/VoidNovelEngine
