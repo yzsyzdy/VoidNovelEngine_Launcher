@@ -1,6 +1,24 @@
-# import main
+import main
 import os
 import file
-url="https://release-assets.githubusercontent.com/github-production-release-asset/1125610083/fefca28f-e414-4d83-8409-a1d1c0c8f84e?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-02-18T07%3A36%3A58Z&rscd=attachment%3B+filename%3DVoidNovelEngine-0.1.0-dev.2.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-02-18T06%3A36%3A51Z&ske=2026-02-18T07%3A36%3A58Z&sks=b&skv=2018-11-09&sig=geBZNc89wI7yhXh23MHN%2F9YihglNEppIbHS9mCQpfSg%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3MTM5OTM5NywibmJmIjoxNzcxMzk3NTk3LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.9xdBZo-Lpd00BS1mPss7FmZEkdfq26UVrFdIxYnjkM8&response-content-disposition=attachment%3B%20filename%3DVoidNovelEngine-0.1.0-dev.2.zip&response-content-type=application%2Foctet-stream"
+import time
+import shutil
+os.system('cls')
+print("="*50,"\n欢迎使用VNEHub\n","="*50,sep="")
 if not os.path.exists("VNE"):
-    file.download(url=url,save_dir=".\\",num_threads=8,filename="VNE.zip")
+    user_input = input("未检测到VNE引擎，是否自动安装(Y/N)")
+    url="https://gitee.com/yzsyzdy/VoidNovelEngine/releases/download/0.1.0.dev.2/VoidNovelEngine-0.1.0-dev.2.zip"
+    if user_input == "Y" or user_input == "y":
+        print("开始调用国内镜像下载")
+        file.download(url=url,save_dir=".\\",num_threads=8,filename="VNE.zip")
+        os.makedirs("VNE", exist_ok=True)
+        print("开始解压下载文件")
+        file.unzip(zip_path=".\VNE.zip",output_path=".\\",folder_name="VNE")
+        shutil.rmtree("VNE\VoidNovelEngine-0.1.0-dev.2\\application\\blueprint")
+        shutil.rmtree("VNE\VoidNovelEngine-0.1.0-dev.2\\application\\flow")
+        shutil.rmtree("VNE\VoidNovelEngine-0.1.0-dev.2\\application\\resources")
+    elif user_input == "N" or user_input == "n":
+        print("未下载VNE引擎，程序无法启动")
+        exit()
+time.sleep(1)
+main.menu()
