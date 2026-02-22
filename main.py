@@ -1,15 +1,18 @@
 import os
 import time
 import file
+import webbrowser
 
 def menu():
     time.sleep(1)
     os.system('cls')
-    print("="*50,"\n欢迎使用VNEHub\n","="*50)
+    print("="*50,"\n欢迎使用VNEHub\n","="*50,sep="")
     print("操作菜单")
     print("1.创建新项目")
     print("2.打开已有的项目")
     print("3.管理项目")
+    print("4.工具")
+    print("5.设置")
     print("E.退出程序")
     Translate_user_input()
 
@@ -23,7 +26,22 @@ def Translate_user_input():
         print("项目列表",file.get_project())
         user_input = input("请输入要打开的项目名称:")
         file.start_engineer(project_name=user_input)
+    if user_input == "3":
+        print("项目列表:",file.get_project())
+        user_input = input("请输入要进行操作的项目名称")
+    if user_input == "4":
+        os.system("cls")
+        print("="*50,"\n工具\n","="*50,sep="")
+        print("1.调用VNEhub的多线程下载引擎进行文件下载")
+        print("未完待续...")
+        print("E.返回主菜单")
+        user_input = input("请输入选项:")
+        if user_input == "1":
+            file.download(url=input("请输入下载文件直链"),save_dir=".\\",num_threads=8,filename=input("请输入保存名称"))
+            user_input = ""
+            menu()
+    if user_input == "5":
+        webbrowser.open("https://www.bilibili.com/video/BV1UT42167xb")
     if user_input == "E" or user_input == "e":
         print("程序已退出")
         exit()
-menu()
