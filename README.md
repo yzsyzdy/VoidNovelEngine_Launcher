@@ -32,7 +32,12 @@
 本项目是为VoidNovelEngine引擎开发的第三方启动器，与VoidNovelEngine项目无直接关系。<br>
 访问VoidNovelEngine项目:https://github.com/VoidmatrixHeathcliff/VoidNovelEngine
 ## 支持功能
+✅: 已支持的功能<br>
+☑️: 开发中的功能, 或已完成但未进行测试<br>
+❌: 还未开始开发, 将在未来进行支持的功能<br>
+🧱: 未在表中的内容, 未计划支持功能或不会支持的功能<br>
+
 | 功能 | 支持情况 |
 | --- | --- |
-| 张三 | 25 |
+|  | 25 |
 | 李四 | 30 |
