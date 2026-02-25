@@ -1,13 +1,15 @@
 import sys
-import os
+import base64
+from pathlib import Path
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout,
     QHBoxLayout, QTextEdit, QLineEdit, QLabel
 )
-from PyQt5.QtGui import QFont
-from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QFont, QPixmap, QBrush, QPalette
+from PyQt5.QtCore import Qt, QByteArray
 import main
 import file
+import background
 
 
 class TerminalApp(QMainWindow):
@@ -70,15 +72,25 @@ class TerminalApp(QMainWindow):
         main.menu()
 
     def set_background(self):
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        bg_path = os.path.join(script_dir, "background.png")
-        if os.path.exists(bg_path):
-            self.setStyleSheet(f"""
-                QMainWindow {{
-                    border-image: url({bg_path.replace('\\', '/')});
-                }}
-            """)
-        else:
+        """将硬编码的 Base64 图片解码、缩放到窗口大小并设为背景"""
+        # 请将以下字符串替换为你的 background.png 的 Base64 编码
+        BACKGROUND_BASE64 = background.bg()
+        b64_data = BACKGROUND_BASE64.strip().replace('\n', '').replace(' ', '')
+
+        try:
+            img_data = QByteArray.fromBase64(b64_data.encode())
+            pixmap = QPixmap()
+            if pixmap.loadFromData(img_data):
+                # 缩放到窗口大小
+                scaled_pix = pixmap.scaled(self.size(), Qt.IgnoreAspectRatio, Qt.SmoothTransformation)
+                palette = self.palette()
+                palette.setBrush(self.backgroundRole(), QBrush(scaled_pix))
+                self.setPalette(palette)
+                self.setAutoFillBackground(True)
+            else:
+                self.setStyleSheet("QMainWindow { background-color: black; }")
+        except Exception as e:
+            print(f"背景加载失败: {e}")
             self.setStyleSheet("QMainWindow { background-color: black; }")
 
     def gui_print(self, text):

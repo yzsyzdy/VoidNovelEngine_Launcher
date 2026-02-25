@@ -51,34 +51,12 @@ def new_project(name, dr):
 
         shutil.copytree(engine_path, os.path.join("project", name))
         gui_print("项目基本结构创建完成")
-
-        # 资源路径
-        src_blu = os.path.join("default_resources", "blu_gui_print")
-        src_res = os.path.join("default_resources", "resources")
-        dst_blu = os.path.join("project", name, "application", "blu_gui_print")
-        dst_res = os.path.join("project", name, "application", "resources")
-
-        if dr:
-            if os.path.exists(src_blu):
-                shutil.copytree(src_blu, dst_blu)
-                gui_print("已复制 blu_gui_print 资源")
-            else:
-                gui_print(f"提示：源路径 {src_blu} 不存在，已创建空目录")
-                os.makedirs(dst_blu, exist_ok=True)
-
-            if os.path.exists(src_res):
-                shutil.copytree(src_res, dst_res)
-                gui_print("已复制 resources 资源")
-            else:
-                gui_print(f"提示：源路径 {src_res} 不存在，已创建空目录")
-                os.makedirs(dst_res, exist_ok=True)
-
-            gui_print("默认资源处理完成")
-        else:
+        # 神秘的东西,暂时不打算完善了
+        if not dr:
             gui_print("未加载默认资源")
-            shutil.rmtree(os.path.join("VNE", "VoidNovelEngine-0.1.0-dev.2", "application", "blueprint"), ignore_errors=True)
-            shutil.rmtree(os.path.join("VNE", "VoidNovelEngine-0.1.0-dev.2", "application", "flow"), ignore_errors=True)
-            shutil.rmtree(os.path.join("VNE", "VoidNovelEngine-0.1.0-dev.2", "application", "resources"), ignore_errors=True)
+            shutil.rmtree(os.path.join("project", f"{name}", "application", "blueprint"), ignore_errors=True)
+            shutil.rmtree(os.path.join("project", f"{name}", "application", "flow"), ignore_errors=True)
+            shutil.rmtree(os.path.join("project", f"{name}", "application", "resources"), ignore_errors=True)
 
         return True
 

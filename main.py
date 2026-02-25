@@ -14,7 +14,7 @@ def gui_print(*args, **kwargs):
 clear_screen = None              # 将在 GUI 中注入
 
 def menu():
-    
+    clear_screen()
     gui_print("=" * 50)
     gui_print("\n欢迎使用VoidNovelEngine_Launcher\n")
     gui_print("=" * 50)
