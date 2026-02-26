@@ -10,7 +10,7 @@
             <img src="https://img.shields.io/github/stars/yzsyzdy/VoidNovelEngine_Launcher.svg?style=flat&labelColor=e49e61">
         </a>
         <a href="https://github.com/yzsyzdy/VoidNovelEngine_Launcher/network/members">
-            <img src="https://img.shields.io/github/forks/VoidmatrixHeathcliff/VoidNovelEngine_Launcher.svg?&color=green&style=flat">
+            <img src="https://img.shields.io/github/forks/yzsyzdy/VoidNovelEngine_Launcher.svg?&color=green&style=flat">
         </a>
         <a href="https://space.bilibili.com/3546775623305965" target="_blank">
             <img src="https://img.shields.io/static/v1?label=author&message=Bilibili&color=blue&style=flat">
@@ -19,7 +19,7 @@
             <img src="https://img.shields.io/static/v1?label=sponsor&message=Afdian&color=blue&style=flat">
         </a>
         <a href="https://github.com/yzsyzdy/VoidNovelEngine_Launcher/graphs/contributors" target="_blank">
-            <img src="https://img.shields.io/github/contributors/VoidmatrixHeathcliff/VoidNovelEngine_Launcher">
+            <img src="https://img.shields.io/github/contributors/yzsyzdy/VoidNovelEngine_Launcher">
         </a>
         <a href="https://github.com/yzsyzdy/VoidNovelEngine_Launcher/blob/main/LICENSE" target="_blank">
             <img src="https://img.shields.io/github/license/yzsyzdy/VoidNovelEngine_Launcher?style=flat">
@@ -30,7 +30,7 @@
 
 ## 项目说明:<br>
 本项目是为VoidNovelEngine引擎开发的第三方启动器，与VoidNovelEngine项目无直接关系。<br>
-访问VoidNovelEngine项目:https://github.com/VoidmatrixHeathcliff/VoidNovelEngine
+访问VoidNovelEngine项目:https://github.com/VoidmatrixHeathcliff/VoidNovelEngine<br>
 本项目exe文件国内备用下载地址:https://yzsyzdy.lanzout.com/ip00g3j9claf 密码:fxmi
 ## 支持功能
 ✅: 已支持的功能<br>
