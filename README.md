@@ -31,6 +31,7 @@
 ## 项目说明:<br>
 本项目是为VoidNovelEngine引擎开发的第三方启动器，与VoidNovelEngine项目无直接关系。<br>
 访问VoidNovelEngine项目:https://github.com/VoidmatrixHeathcliff/VoidNovelEngine
+本项目exe文件国内备用下载地址:https://yzsyzdy.lanzout.com/ip00g3j9claf 密码:fxmi
 ## 支持功能
 ✅: 已支持的功能<br>
 ☑️: 开发中的功能, 或已完成但未进行测试<br>
