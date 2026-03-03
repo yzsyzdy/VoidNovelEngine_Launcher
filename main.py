@@ -2,6 +2,7 @@ import os
 import time
 import file
 import webbrowser
+import AI
 
 # 状态管理
 current_state = "menu"          # "menu", "awaiting_project_name"
@@ -15,6 +16,9 @@ clear_screen = None              # 将在 GUI 中注入
 
 def menu():
     clear_screen()
+    text_mryy = file.get_text()
+    gui_print(text_mryy[0])
+    gui_print("来自:"+text_mryy[1])
     gui_print("=" * 50)
     gui_print("\n欢迎使用VoidNovelEngine_Launcher\n")
     gui_print("=" * 50)
@@ -24,6 +28,7 @@ def menu():
     gui_print("3.管理项目")
     gui_print("4.工具")
     gui_print("5.设置")
+    # gui_print("6.AI")
     gui_print("E.退出程序")
 
 def Translate_user_input(user_input):
@@ -63,10 +68,14 @@ def Translate_user_input(user_input):
             gui_print("未完待续...")
             gui_print("E.返回主菜单")
             # 实际应进入子菜单，这里简化处理
-            menu()
+            if user_input == "E" or user_input == "e":
+                menu()
         elif user_input == "5":
             webbrowser.open("https://www.bilibili.com/video/BV1UT42167xb")
             menu()
+        elif user_input == "6":
+            pass
+
         elif user_input.lower() == "e":
             gui_print("程序已退出")
             exit()

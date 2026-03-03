@@ -33,6 +33,15 @@ def get_project():
         os.makedirs(path, exist_ok=True)
     return folders
 
+def get_text():
+    # 用来获取每日一言
+    url = "https://v1.hitokoto.cn/"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return data['hitokoto'], data['from']
+
+    
 
 def new_project(name, dr):
     """
